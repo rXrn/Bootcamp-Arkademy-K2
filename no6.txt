@@ -1,0 +1,32 @@
+CREATE DATABASE gudang;
+
+CREATE TABLE categories (
+	id int NOT NULL AUTO_INCREMENT,
+	name varchar(50) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE products (
+	id int NOT NULL AUTO_INCREMENT,
+	name varchar(50) NOT NULL,
+	category_id int,
+	PRIMARY KEY (id),
+	FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+A:
+
+INSERT INTO categories (name)
+VALUES ('Peralatan Mandi'),('Mie Instan'),('Olahan Daging');
+
+INSERT INTO products (name, category_id)
+VALUES ('Sampo',1),('Sikat Gigi',1),('Indomi',2),('mie sedap',2),('nuget',3);
+
+B:
+
+SELECT categories.id, categories.name as category_name, GROUP_CONCAT(products.name) as products
+FROM categories
+INNER JOIN products
+ON products.category_id = categories.id
+GROUP BY categories.name
+ORDER BY categories.id
