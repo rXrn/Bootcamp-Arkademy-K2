@@ -27,8 +27,9 @@ Dapat dilihat pada no6.txt </br>
 
 
 [Soal Nomor 7] </br>
-Copy folder gudang-online pada C:\xampp\htdocs </br>
-lalu ketikkan: </br>
+Copy folder gudang-online dan letakkan pada C:\xampp\htdocs </br>
+ingat untuk aktifkan apache dan mysql di XAMPP </br>
+lalu ketikkan pada browser: </br>
 ```sh
 localhost/gudang-online/index.php/admin/products/
 ```
